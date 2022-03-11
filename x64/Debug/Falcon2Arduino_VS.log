@@ -1,0 +1,30 @@
+﻿  Source.cpp
+Source.obj : error LNK2019: symbole externe non résolu "public: __cdecl SerialPort::~SerialPort(void)" (??1SerialPort@@QEAA@XZ) référencé dans la fonction "public: __cdecl PC2Arduino::~PC2Arduino(void)" (??1PC2Arduino@@QEAA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu "public: __cdecl PC2Arduino::PC2Arduino(char *)" (??0PC2Arduino@@QEAA@PEAD@Z) référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu "public: void __cdecl PC2Arduino::sendData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?sendData@PC2Arduino@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) référencé dans la fonction "public: __cdecl <lambda_f949877d7a8dbe98de6f1b5db20b668d>::operator()(void)const " (??R<lambda_f949877d7a8dbe98de6f1b5db20b668d>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdErrorGetLastStr référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdGetSystemName référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu dhdGetSDKVersionStr référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu dhdGetPosition référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdGetForce référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdGetComFreq référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdSetForceAndTorqueAndGripperForce référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdKbHit référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdKbGet référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdGetTime référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu dhdSleep référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdOpen référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdClose référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdIsSupported référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdIsInitialized référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdAutoInit référencé dans la fonction main
+Source.obj : error LNK2019: symbole externe non résolu drdStart référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdRegulatePos référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdRegulateRot référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdRegulateGrip référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdMoveToPos référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdMoveToRot référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdMoveToGrip référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdMoveTo référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+Source.obj : error LNK2019: symbole externe non résolu drdStop référencé dans la fonction "public: __cdecl <lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>::operator()(void)const " (??R<lambda_e4f45bd7ca2fee4076b2ff1b1d60c88a>@@QEBA@XZ)
+C:\Program Files\Force Dimension\sdk-3.14.0\examples\CLI\x64\Debug\Falcon2Arduino_VS.exe : fatal error LNK1120: 28 externes non résolus
