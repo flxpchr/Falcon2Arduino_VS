@@ -15,19 +15,37 @@
 #include <cstdlib>
 
 //Falcon files
+#define FALCON_MAX 334
+#define FALCON_MIN -380
 #include <stdio.h>
 #include <stdlib.h>
 #define _USE_MATH_DEFINES
 #include <math.h>
-
 #include "dhdc.h"
 #include "drdc.h"
 
+//#define INTERFACE 
+
+#ifdef INTERFACE
+#define SERVO_MAX 150
+#define SERVO_MIN 0
+
+#endif // INTERFACE
+
+#ifndef INTERFACE
+#define SERVO_MAX 2100
+#define SERVO_MIN 900
+#endif // !INTERFACE
+
+
+
+
+
+//Arduino COM :
 // change the name of the port with the port name of your computer
 // must remember that the backslashes are essential so do not remove them
 
-#define SERVO_MAX 150
-#define SERVO_MIN 0
+
 
 char* port = (char*)"\\\\.\\COM4";
 
@@ -57,7 +75,22 @@ void wait_to_keep_freq(std::chrono::steady_clock::time_point t_start, float freq
 
 //Function to format data to send into a string representing an integer between SERVO_MAX and SERVO_MIN
 std::string computeServoPosition(double position) {
-	int clampPosition = std::clamp(int(position), SERVO_MIN, SERVO_MAX);
+	//int clampPosition = std::clamp(int(position), SERVO_MIN, SERVO_MAX);
+
+	//int clampPosition = int(position - FALCON_MIN);
+	double absPosition = position - FALCON_MIN;
+	//double ratio = (SERVO_MAX - SERVO_MIN) / (FALCON_MAX - FALCON_MIN);
+	//double ratio = 0.21;
+	double ratio = 1;
+	long int  clampPosition = (absPosition + 711 - SERVO_MAX) * ratio;
+	//std::cout << "clamp : " << absPosition << "\r";
+	//if (clampPosition < SERVO_MIN) {
+	//	clampPosition = SERVO_MIN;
+	//}
+	//else if (clampPosition > SERVO_MAX) {
+	//	clampPosition = SERVO_MAX;
+	//}
+	std::cout << "clamp : " << clampPosition << "\r";
 	return std::to_string(abs(SERVO_MAX - clampPosition));
 }
 
@@ -86,7 +119,7 @@ int main(int argc, char* argv[])
 	std::string data;
 
 	// center of workspace
-	double nullPose[DHD_MAX_DOF] = { 0.0, 0.0, 0.0,  // base  (translations)
+	double nullPose[DHD_MAX_DOF] = { 0.034, 0.0, 0.0,  // base  (translations)
 									 0.0, 0.0, 0.0,  // wrist (rotations)
 									 0.0 };          // gripper
 
@@ -153,10 +186,12 @@ int main(int argc, char* argv[])
 				printf("error: cannot read force (%s)\n", dhdErrorGetLastStr());
 				done = 1;
 			}
-			printf("p (%+0.03f %+0.03f %+0.03f) m  |  f (%+0.01f %+0.01f %+0.01f) N  |  freq [%0.02f kHz]       \r", abs(px*10000), py, pz, fx, fy, fz, freq);
+			//printf("p (%+0.03f %+0.03f %+0.03f) m  |  f (%+0.01f %+0.01f %+0.01f) N  |  freq [%0.02f kHz]       \r", px, py, pz, fx, fy, fz, freq);
+			//printf("p (%f %f %f) m  |  f (%+0.01f %+0.01f %+0.01f) N  |  freq [%0.02f kHz]       \r", px, py, pz, fx, fy, fz, freq);
 
 			std::unique_lock<std::mutex> lock(m_falcon);
-			data = computeServoPosition(abs(px * 10000));
+			data = computeServoPosition(px * 10000);
+			//std::cout << "data : " << px*10000 << "\r";
 			lock.unlock();
 			cond_var_falcon.notify_all();
 			//}
